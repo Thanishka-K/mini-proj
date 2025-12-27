@@ -1,0 +1,21 @@
+# proj to convert any url into a QR code
+!pip install qrcode
+import qrcode
+url=input("Paste your url to convert into QR code ")
+img=qrcode.make(url)
+img.save('qr.png')
+print("QR generated successfully")
+
+# proj to download any video file with the best quality 
+!pip install yt_dlp
+import yt_dlp
+link=input ("Paste the link to Download Video ")
+with yt_dlp.YoutubeDL({'format':'best'}) as yt:
+  yt.download([link])
+
+# proj to download any audio file with best quality
+import yt_dlp
+link=input ("Paste the link to Download A ")
+with yt_dlp.YoutubeDL({'format':'bestaudio'}) as yt:
+yt.download([link])
+  
