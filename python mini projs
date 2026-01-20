@@ -46,3 +46,13 @@ plt.title('Monthly Expense Breakdown')
 plt.show()
 
 print(df)
+
+# proj random password generator (easy)
+import random
+import string
+
+length = int(input("Enter password length: "))
+chars = string.ascii_letters + string.digits + string.punctuation
+password = "".join(random.choices(chars, k=length))
+print("Your password is:", password)
+
