@@ -56,3 +56,39 @@ chars = string.ascii_letters + string.digits + string.punctuation
 password = "".join(random.choices(chars, k=length))
 print("Your password is:", password)
 
+(complex code)
+import string
+import secrets
+
+def generate_password(length, use_digits=True, use_special=True):
+    letters = string.ascii_letters
+    digits = string.digits if use_digits else ''
+    special = string.punctuation if use_special else ''
+    
+    all_chars = letters + digits + special
+    
+    if not all_chars:
+        return "Error: No characters selected!"
+
+    # Generate a random password using the secrets module
+    # We use a list comprehension to pick a random char 'length' times
+    password = ''.join(secrets.choice(all_chars) for _ in range(length))
+    
+    return password
+
+def main():
+    print("--- 🔐 Python Password Generator ---")
+    
+    try:
+        length = int(input("Enter password length (e.g., 12): "))
+        incl_numbers = input("Include numbers? (y/n): ").lower() == 'y'
+        incl_special = input("Include special characters? (y/n): ").lower() == 'y'
+    
+        pwd = generate_password(length, incl_numbers, incl_special)
+        print(f"\nYour new secure password is: **{pwd}**")
+        
+    except ValueError:
+        print("Please enter a valid number for the length.")
+
+if __name__ == "__main__":
+    main()
