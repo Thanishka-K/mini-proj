@@ -109,3 +109,17 @@ def convert_currency(amount, from_curr, to_curr):
 
 # Example usage
 convert_currency(100, "USD", "EUR")
+
+# "Drink Water" Reminder
+
+pip install plyer
+import time
+from plyer import notification
+
+while True:
+    notification.notify(
+        title = "Health Alert!",
+        message = "Time to drink water and stretch your back.",
+        timeout = 10 # Notification stays for 10 seconds
+    )
+    time.sleep(3600) # Wait for 1 hour (3600 seconds)
