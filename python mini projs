@@ -123,3 +123,18 @@ while True:
         timeout = 10 # Notification stays for 10 seconds
     )
     time.sleep(3600) # Wait for 1 hour (3600 seconds)
+
+#Text Sentiment Analyzer
+from textblob import TextBlob
+
+text = input("Enter some text to analyze: ")
+analysis = TextBlob(text)
+
+# polarity is between -1.0 (negative) and 1.0 (positive)
+if analysis.sentiment.polarity > 0:
+    print("Vibe: Positive! 😊")
+elif analysis.sentiment.polarity < 0:
+    print("Vibe: Negative. 😟")
+else:
+    print("Vibe: Neutral. 😐")
+
