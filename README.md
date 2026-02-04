@@ -1,2 +1,2 @@
 # mini-proj
-Just random projects and mini apps to write python code for
+coding random projects and mini apps using PYTHON language 
