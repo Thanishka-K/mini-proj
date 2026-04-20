@@ -1,0 +1,10 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Analysis Output (Keep the repo clean)
+eda_reports/
+
+# Environments
+venv/
+.env
